@@ -1,4 +1,4 @@
-<nav class="d-flex align-center pos-fixed vw-100 bg-secondary-blur" style="height: 5rem;">
+<nav class="d-flex align-center pos-fixed vw-100 bg-secondary-blur bg-dark" style="height: 5rem; z-index:999999;">
   <div class="container d-flex align-center justify-between">
     <div class="logo" style="width: 100px;">
       <img width="100%" src="<?php echo URLROOT ?>/imgs/Logo.png" alt="">

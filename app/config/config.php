@@ -12,8 +12,11 @@
     $appDirectory = dirname(dirname(__FILE__));
     define('APPROOT', $appDirectory);
 
+    // PORT, OPTIONAL
+    $port = ":8080";
+
     // URL Root
-    $urlRoot = "http://localhost/PoolJunction";
+    $urlRoot = "http://localhost".$port."/PoolJunction";
     define("URLROOT",  $urlRoot);
 
     // Site Name
