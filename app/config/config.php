@@ -5,7 +5,7 @@
     define('DB_HOST', 'localhost');
     define('DB_USERNAME', 'root');
     define('DB_PASSWORD', '');
-    define('DB_NAME', 'castor');
+    define('DB_NAME', 'pooljunction');
 
     // App Root
     // Go back 2 directories to get /app directory
@@ -13,7 +13,7 @@
     define('APPROOT', $appDirectory);
 
     // PORT, OPTIONAL
-    $port = ":8080";
+    $port = "";
 
     // URL Root
     $urlRoot = "http://localhost".$port."/PoolJunction";

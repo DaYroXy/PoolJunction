@@ -1,0 +1,216 @@
+@media only screen and (max-width: 990px) {
+
+    .__NAV__ {
+        height: fit-content;
+    }
+
+    .__NAV__CONTAINER {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .__NAV__ITEMS {
+        display: none;
+        flex-direction: column;
+        margin-bottom: 2.5rem;
+        width: 100%;
+    }
+
+    .__NAV__ICONS {
+        display: none;
+        width: 100%;
+        justify-content: space-around;
+        margin-bottom: 2.5rem;
+    }
+
+    .___NAV__LOGO__SECTION {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .__HAMBURGER__ {
+        display: block;
+    }
+
+    .__introduction__{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .__introduction__container {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .__MAIN__CATEGORY {
+        flex-direction: column;
+    }
+
+    .__MAIN__CATEGORY__LEFT {
+        width: 100%;
+    }
+
+    .__MAIN__CATEGORY__RIGHT {
+        width: 100%;
+    }
+
+    .__MAIN__POPULAR__MOST__SOLD {
+        width: 100vh;
+    }
+
+    .__MAIN__OUR__CREATION {
+        flex-direction: column;
+    }
+
+    .__MAIN__CREATION__INFO{
+        width: 100vw;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+
+    .__MAIN__BENEFITS {
+        flex-wrap: wrap;
+        /* flex-direction: column; */
+        align-items: center;
+        justify-content: center;
+        gap: 5rem;
+    }
+
+    .__MAIN__NEWSLETTER__LEFT__IMAGE{
+        display: none;
+    }
+
+    .__MAIN__NEWSLETTER__RIGHT{
+        margin: 0;
+        width: 100%;
+    }
+
+    .__NEWS_LETTER_CONTAINER{
+        width: 100vw;
+    }
+
+    .__NEWS_LETTER_CONTAINER h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .__NEWS_LETTER_CONTAINER p {
+        text-align: center;
+    }
+
+    .__NEWS_LETTER_CONTAINER input {
+        width: 100%;
+    }
+    .__NEWS_LETTER_CONTAINER button {
+        width: 100%;
+    }
+
+    .__FOOTER__ {
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .__STORE__SEARCH__BUTTON {
+        width: 100%;
+    }
+
+    .__ABOUT__INFO {
+        flex-direction: column-reverse;
+        gap: 5rem;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .__ABOUT__TITLE {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+    
+    .far-underline-primary::before{
+        display: none;
+    }
+    .__CONTACT_MAIN {
+        min-height: 100vh;
+        height: fit-content;
+    }
+    .__CONTACT__FORM {
+        margin: 10rem 0;
+    }
+    .__LOGIN_MAIN {
+        min-height: 100vh;
+        height: fit-content;
+    }
+    .__LOGIN__FORM {
+        margin: 10rem 0;
+    }
+    .__REGISTER__MAIN {
+        min-height: 100vh;
+        height: fit-content;
+    }
+    .__REGISTER__FORM {
+        margin: 10rem 0;
+    }
+    .__REGISTER__FORM {
+        flex-direction: column;
+    }
+    .__REGISTER__LEFT {
+        width: 100%;
+    }
+    .__REGISTER__RIGHT{
+        width: 100%;
+    }
+    .__CART__MAIN{
+        flex-direction: column-reverse;
+    }
+    .__CART__PAYMENT__DETAILS {
+        width: 100%;
+    }
+    .__CART__DELETE input {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1540px) {
+    .__CART__PRODUCT {
+        flex-wrap: wrap;
+    }
+
+}
+
+@media only screen and (max-width: 1295px) {
+    .__CART__PRODUCT {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 1rem;
+    }
+    .__CART__PRODUCT .product-info {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .__CART__UPDATE{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    .__CART__UPDATE div {
+        margin: 0;
+        padding: 0;
+    }
+    .__CART__DELETE {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+}

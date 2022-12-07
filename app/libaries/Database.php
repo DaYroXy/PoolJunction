@@ -79,6 +79,11 @@
             return $this->stmt->execute();
         }
 
+        // Execute the prepared statemnt
+        public function getInsertedId() {
+            return $this->dbHandler->lastInsertId();
+        }
+
         // Get multiple results as array of objects
         public function resultSet() {
             $this->execute();

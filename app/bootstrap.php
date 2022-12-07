@@ -6,6 +6,7 @@
     // Load Helpers
     require_once 'helpers/url_helper.php';
     require_once 'helpers/session_helper.php';
+    require_once 'helpers/currency_convertor.php';
 
 
     // Autoload Libaries

@@ -9,19 +9,23 @@
     
     class Core {
         protected $currentController = "Home";
+        private $notfound = "NotFound";
         protected $currentMethod = "index";
         protected $params = [];
 
         public function __construct(){
             // $this->getUrl();
             $url = $this->getUrl();
-
             // Look in controllers for first value, capital first url letter since controllers have upper case
             if(isset($url[0]) && file_exists('../app/controllers/' . ucwords($url[0]). '.php')){
                 
                 // if exists, set as controller
                 $this->currentController = ucwords($url[0]);
                 unset($url[0]);
+
+            } else if(!empty($url)) {
+                // if not, set to not found
+                $this->currentController = $this->notfound;
             }
 
             // Require the controller

@@ -1,5 +1,14 @@
 <?php
-    session_start();
+  session_start();
+
+  // Check if user havent been on the site for more than 30mins
+  if(isset($_SESSION['user']['timestamp'])) {
+    if(time() - $_SESSION['user']['timestamp'] > 1800) {
+      header('Location: ' . URLROOT . '/logout');
+    } else {
+      $_SESSION['user']['timestamp'] = time();
+    }
+  }
 
   // Flash message helper
   // EXAMPLE - flash('register_success', 'You are now registered');

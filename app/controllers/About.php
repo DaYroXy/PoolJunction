@@ -14,6 +14,8 @@
             // Data to send to index
             $data = [
                 'title' => 'About',
+                'theme' => 'dark',
+                'scroll-color' => true,
                 'description' => 'This is the About page.'
             ];
             
