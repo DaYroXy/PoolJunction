@@ -20,7 +20,7 @@
                             <?php
                                 echo isset($data['delete_err']) ? '<p class="text-danger">' . $data['delete_err'] . '</p>' : '';
                                 echo isset($data['img_err']) ? '<p class="text-danger">' . $data['img_err'] . '</p>' : '';
-                                flash('image_upload_success');
+                                flash('image_flash');
                             ?>
                         </div>
                     </div>
@@ -37,8 +37,8 @@
                 <?php foreach($data['images'] as $image): ?>
                     <li class="gap-3 w-fit card p-3 br-3">
                         <img class="brtr-3 brbr-3 brbl-3 brtl-3 w-100" style="object-fit: cover; max-width:330px; max-height:210px;" src="<?php echo URLROOT ?>/content/gallery/<?php echo $image->img; ?>" alt="">                        
-                        <form class="img-control d-flex gap-5" style="margin-top: auto;">
-                            <input type="submit" value="Delete" class="btn btn-danger w-100 text-dark">
+                        <form method="POST" action="<?php echo URLROOT ?>/photos/delete/<?php echo $image->id ?>" class="img-control d-flex gap-5" style="margin-top: auto;">
+                            <input type="submit" name="deleteOne" value="Delete" class="btn btn-danger w-100 text-dark">
                         </form>
                     </li>
                 <?php endforeach; ?>

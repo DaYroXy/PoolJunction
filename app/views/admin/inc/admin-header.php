@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?php echo URLROOT ?>/css/tablet.css">
     <link rel="stylesheet" href="<?php echo URLROOT ?>/css/mobile.css">
     <link rel="icon" href="<?php echo URLROOT ?>/imgs/Logo.png" type="image/png">
+    <script>const URLROOT="<?php echo URLROOT; ?>"</script>
     <title><?php echo SITENAME ?></title>
 </head>
 <body>

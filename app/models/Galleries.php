@@ -95,14 +95,11 @@
         // Delete all images files
         public function deleteAllImagesFiles() {
             $files = glob("../public/content/gallery/*");
-            print_r( $files);
-            // foreach($files as $file) {
-            //     if(file_exists($file)) {
-            //         // unlink($file);
-            //         print_r($file);
-            //         echo "<br>";
-            //     }
-            // }
+            foreach($files as $file) {
+                if(file_exists($file)) {
+                    unlink($file);
+                }
+            }
         }
 
         // Delete all images from db
@@ -110,6 +107,32 @@
             $this->db->query('DELETE FROM gallery');
             if($this->db->execute()) {
                 $this->deleteAllImagesFiles();
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        // Delete one image file
+        public function deleteOneImageFile($id) {
+            $this->db->query('SELECT * FROM gallery WHERE id = :id');
+            $this->db->bind(':id', $id);
+            $row = $this->db->single();
+            if(!$row) {
+                return false;
+            }
+            $file = '../public/content/gallery/' . $row->img;
+            if(file_exists($file)) {
+                unlink($file);
+            }
+        }
+
+        // delete one image from db
+        public function deleteOneImage($id) {
+            $this->deleteOneImageFile($id);
+            $this->db->query('DELETE FROM gallery WHERE id = :id');
+            $this->db->bind(':id', $id);
+            if($this->db->execute()) {
                 return true;
             } else {
                 return false;

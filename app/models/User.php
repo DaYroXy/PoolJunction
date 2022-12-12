@@ -89,4 +89,10 @@
             $_SESSION['cart'] = 0;
         }
         
+        // Get all users count
+        public function getAllUsersCount() {
+            $this->db->query('SELECT * FROM users');
+            $this->db->execute();
+            return $this->db->rowCount();
+        }
     }

@@ -10,7 +10,21 @@
 
         // Get all products
         public function getProducts() {
-            $this->db->query('SELECT * FROM products');
+            $this->db->query('SELECT *,products.id as id, products.created_at as created_at, products.description as description, products.name as name, products_category.name as categoryName FROM products INNER join products_category ON products.category_id = products_category.id');
+            $results = $this->db->resultSet();
+            return $results;
+        }
+
+        // Get all products
+        public function getProductsByDate() {
+            $this->db->query('SELECT *,products.id as id, products.created_at as created_at, products.description as description, products.name as name, products_category.name as categoryName FROM products INNER join products_category ON products.category_id = products_category.id ORDER BY products.created_at DESC');
+            $results = $this->db->resultSet();
+            return $results;
+        }
+
+        // Get all products
+        public function getProductsByUpdated() {
+            $this->db->query('SELECT *,products.id as id, products.created_at as created_at, products.description as description, products.name as name, products_category.name as categoryName FROM products INNER join products_category ON products.category_id = products_category.id ORDER BY products.updated_at DESC');
             $results = $this->db->resultSet();
             return $results;
         }
@@ -52,6 +66,61 @@
             $this->db->bind(':id', $id);
             $row = $this->db->single();
             return $row;
+        }
+
+        // get product and category by id
+        public function getProductAndCategoryById($id) {
+            $this->db->query('SELECT *,products.id as id, products.created_at as created_at, products.description as description, products.name as name, products_category.name as categoryName FROM products INNER join products_category ON products.category_id = products_category.id WHERE products.id = :id');
+            $this->db->bind(':id', $id);
+            $results = $this->db->resultSet();
+            return $results;
+        }
+        
+        // delete product
+        public function deleteProduct($id) {
+            $this->db->query('DELETE FROM products WHERE id = :id');
+            $this->db->bind(':id', $id);
+            if($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        // Add product to file
+        public function addProduct($data) {
+            $this->db->query('INSERT INTO products (name, description, category_id, price, sold, quantity, img) VALUES (:name, :description, :category_id, :price, :sold, :quantity, :img)');
+            $this->db->bind(':name', $data['name']);
+            $this->db->bind(':description', $data['description']);
+            $this->db->bind(':category_id', $data['category_id']);
+            $this->db->bind(':price', $data['price']);
+            $this->db->bind(':sold', $data['sold']);
+            $this->db->bind(':quantity', $data['quantity']);
+            $this->db->bind(':img', $data['img']);
+
+            if($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        // Update product
+        public function updateProduct($data) {
+            $this->db->query('UPDATE products SET name = :name, description = :description, category_id = :category_id, price = :price, sold = :sold, quantity = :quantity WHERE id = :id');
+            $this->db->bind(':id', $data['id']);
+            $this->db->bind(':name', $data['name']);
+            $this->db->bind(':description', $data['description']);
+            $this->db->bind(':category_id', $data['category_id']);
+            $this->db->bind(':price', $data['price']);
+            $this->db->bind(':sold', $data['sold']);
+            $this->db->bind(':quantity', $data['quantity']);
+
+            if($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
     }

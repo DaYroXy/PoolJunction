@@ -14,6 +14,7 @@
             // Data to send to index
             $data = [
                 "Admin_Page" => true,
+                'page' => 'Photos',
                 "img" => "",
                 "images" => $this->galleryModel->getImages(),
             ];
@@ -27,7 +28,7 @@
             // Check if POST
             if($_SERVER['REQUEST_METHOD'] !== 'POST') {
                 // Redirect to index
-                redirect('admin/photos');
+                redirect('/photos');
             }
 
             // Sanitize POST
@@ -35,6 +36,7 @@
 
             $data = [
                 "Admin_Page" => true,
+                'page' => 'Photos',
                 "images" => "",
                 "img" => '',
                 "img_err" => "",
@@ -56,7 +58,7 @@
                         //  add image to db
                         if($this->galleryModel->insertImage($hashed_img_name)) {
                             // Redirect to index
-                            flash('image_upload_success', 'Image uploaded successfully');
+                            flash('image_flash', 'Image uploaded successfully');
                         } else {
                             $data['img_err'] = "Something went wrong";
                         }
@@ -75,11 +77,12 @@
             // Check if POST
             if($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['DeleteAll'])) {
                 // Redirect to index
-                redirect('admin/photos');
+                redirect('/photos');
             }
 
             $data = [
                 "Admin_Page" => true,
+                'page' => 'Photos',
                 "images" => "",
                 "delete_err" => "",
             ];
@@ -87,13 +90,41 @@
             // Sanitize POST
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-            if($this->galleryModel->deleteAllImagesFiles()) {
+            if($this->galleryModel->deleteAllImages()) {
                 // Redirect to index
-                flash('image_delete_success', 'All images deleted successfully', 'alert alert-warning');
+                flash('image_flash', 'All images deleted successfully', 'alert alert-warning');
             } else {
                 $data['delete_err'] = "Something went wrong";
             }
-            $data["images"] = $this->galleryModel->deleteAllImagesFiles();
+            $data["images"] = $this->galleryModel->getImages();
+            // Load index to client
+            $this->view('admin/gallery', $data);
+        }
+
+        public function delete($id) {
+            // Check if POST
+            if($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['deleteOne'])) {
+                // Redirect to index
+                redirect('/photos');
+            }
+
+            $data = [
+                "Admin_Page" => true,
+                'page' => 'Photos',
+                "images" => "",
+                "delete_err" => "",
+            ];
+
+            // Sanitize POST
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            if($this->galleryModel->deleteOneImage($id)) {
+                // Redirect to index
+                flash('image_flash', 'Image deleted successfully', 'alert alert-warning');
+            } else {
+                $data['delete_err'] = "Something went wrong";
+            }
+            $data["images"] = $this->galleryModel->getImages();
             // Load index to client
             $this->view('admin/gallery', $data);
         }

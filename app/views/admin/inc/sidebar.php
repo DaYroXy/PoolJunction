@@ -7,34 +7,38 @@
     </div>
 
     <ul class="w-100 mt-5 ">
-        <a href="<?php echo URLROOT ?>/dashboard" class="d-flex align-center p-5 list-hover gap-4 active">
+        <a href="<?php echo URLROOT ?>/dashboard" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Dashboard' ? "active" : '' ?> ">
             <i class="fa-solid fa-house"></i>
             <h4 class="w-100 fw-4">Dashboard</h4>
         </a>
         
-        <a href="<?php echo URLROOT ?>/dashboard" class="d-flex align-center p-5 list-hover gap-4">
+        <a href="<?php echo URLROOT ?>/dashboard" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Category' ? "active" : '' ?> ">
         <i class="fa-solid fa-layer-group"></i>
             <h4 class="w-100 fw-4">Category</h4>
         </a>
         
-        <a href="<?php echo URLROOT ?>/dashboard" class="d-flex align-center p-5 list-hover gap-4">
+        <a href="<?php echo URLROOT ?>/items" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Products' ? "active" : '' ?> ">
             <i class="fa-solid fa-cubes"></i>
             <h4 class="w-100 fw-4">Products</h4>
         </a>
         
-        <a href="<?php echo URLROOT ?>/dashboard" class="d-flex align-center p-5 list-hover gap-4">
+        <a href="<?php echo URLROOT ?>/dashboard" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Orders' ? "active" : '' ?> ">
             <i class="fa-solid fa-cart-shopping"></i>
             <h4 class="w-100 fw-4">Orders</h4>
         </a>
         
-        <a href="<?php echo URLROOT ?>/dashboard" class="d-flex align-center p-5 list-hover gap-4">
+        <a href="<?php echo URLROOT ?>/dashboard" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Customers' ? "active" : '' ?> ">
             <i class="fa-solid fa-users"></i>
             <h4 class="w-100 fw-4">Customers</h4>
         </a>
         
-        <a href="<?php echo URLROOT ?>/dashboard" class="d-flex align-center p-5 list-hover gap-4">
+        <a href="<?php echo URLROOT ?>/photos" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Photos' ? "active" : '' ?> ">
             <i class="fa-solid fa-images"></i>
             <h4 class="w-100 fw-4">Gallery</h4>
+        </a>
+        <a href="<?php echo URLROOT ?>/photos" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Contact' ? "active" : '' ?> ">
+            <i class="fa-solid fa-message"></i>
+            <h4 class="w-100 fw-4">Contact</h4>
         </a>
     </ul>
 

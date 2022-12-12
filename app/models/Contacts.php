@@ -33,4 +33,11 @@
             }
         }
 
+        // Get all contacts count
+        public function getAllContactsCount() {
+            $this->db->query('SELECT * FROM contact');
+            $this->db->execute();
+            return $this->db->rowCount();
+        }
+
     }
