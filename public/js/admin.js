@@ -16,6 +16,7 @@ function deleteVerification(productId) {
 }
 
 function closeMenu() {
+    
     console.log('close');
     let dynamicCategory = document.querySelectorAll('#dynamicCategory');
     if(dynamicCategory.length > 0) {
@@ -29,7 +30,6 @@ function closeMenu() {
 }
 
 function openEdit(productId) {
-
     let editForm = document.querySelector('#__EDIT__FORM__');
     try {
         fetch(`${URLROOT}/items/get/${productId}`).then(res => res.json()).then(data => {
@@ -56,6 +56,30 @@ function openEdit(productId) {
             sold.value = data[0].sold;
             quantity.value = data[0].quantity;
             document.querySelector("#__EDIT__FORM__").setAttribute('action', `${URLROOT}/items/update/${productId}`);
+            document.querySelector('.__UPDATE__CONFIRM').classList.remove('d-none');
+            OverLayElement.classList.remove('d-none');
+        })
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+function openEditCategory(productId) {
+    let editForm = document.querySelector('#__EDIT__FORM__');
+    try {
+        fetch(`${URLROOT}/categories/get/${productId}`).then(res => res.json()).then(data => {
+            let name = editForm.querySelector('[name="name"]');
+            let description = editForm.querySelector('[name="description"]');
+
+            if(data.length === 0) {
+                name.value = '';
+                description.value = '';
+                return;
+            }
+            name.value = data.name;
+            description.value = data.description;
+            document.querySelector("#__EDIT__FORM__").setAttribute('action', `${URLROOT}/categories/update/${productId}`);
             document.querySelector('.__UPDATE__CONFIRM').classList.remove('d-none');
             OverLayElement.classList.remove('d-none');
         })

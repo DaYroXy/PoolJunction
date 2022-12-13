@@ -23,6 +23,13 @@
         }
 
         // Get all products
+        public function getProductsById() {
+            $this->db->query('SELECT *,products.id as id, products.created_at as created_at, products.description as description, products.name as name, products_category.name as categoryName FROM products INNER join products_category ON products.category_id = products_category.id ORDER BY products.id DESC');
+            $results = $this->db->resultSet();
+            return $results;
+        }
+
+        // Get all products
         public function getProductsByUpdated() {
             $this->db->query('SELECT *,products.id as id, products.created_at as created_at, products.description as description, products.name as name, products_category.name as categoryName FROM products INNER join products_category ON products.category_id = products_category.id ORDER BY products.updated_at DESC');
             $results = $this->db->resultSet();

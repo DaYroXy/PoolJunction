@@ -138,10 +138,6 @@
                             <span class="text-muted p-1">Name</span>
                             <input type="text" name="tags" class="mt-1 w-100" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
-                        <div class="input-group" style="max-width: 220px;">
-                            <span class="text-muted p-1">Price</span>
-                            <input type="text" name="price" class="mt-1 w-100" placeholder="Price" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
                         <div class="input-group w-100 d-flex align-end" style="max-width: 150px; height:61px;" style="min-width: 220px;">
                             <input type="submit" name="discount" class="mt-1 btn btn-primary w-100 text-dark" style="padding: 0.38rem" value="Search" aria-label="Username" aria-describedby="basic-addon1">
                         </div>

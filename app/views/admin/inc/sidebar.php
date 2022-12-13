@@ -7,36 +7,36 @@
     </div>
 
     <ul class="w-100 mt-5 ">
-        <a href="<?php echo URLROOT ?>/dashboard" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Dashboard' ? "active" : '' ?> ">
+        <a href="<?php echo URLROOT ?>/dashboard" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Dashboard' ? "ml-5 active" : '' ?> ">
             <i class="fa-solid fa-house"></i>
             <h4 class="w-100 fw-4">Dashboard</h4>
         </a>
         
-        <a href="<?php echo URLROOT ?>/dashboard" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Category' ? "active" : '' ?> ">
+        <a href="<?php echo URLROOT ?>/categories" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Categories' ? "ml-5 active" : '' ?> ">
         <i class="fa-solid fa-layer-group"></i>
             <h4 class="w-100 fw-4">Category</h4>
         </a>
         
-        <a href="<?php echo URLROOT ?>/items" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Products' ? "active" : '' ?> ">
+        <a href="<?php echo URLROOT ?>/items" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Products' ? "ml-5 active" : '' ?> ">
             <i class="fa-solid fa-cubes"></i>
             <h4 class="w-100 fw-4">Products</h4>
         </a>
         
-        <a href="<?php echo URLROOT ?>/dashboard" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Orders' ? "active" : '' ?> ">
+        <a href="<?php echo URLROOT ?>/dashboard" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Orders' ? "ml-5 active" : '' ?> ">
             <i class="fa-solid fa-cart-shopping"></i>
             <h4 class="w-100 fw-4">Orders</h4>
         </a>
         
-        <a href="<?php echo URLROOT ?>/dashboard" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Customers' ? "active" : '' ?> ">
+        <a href="<?php echo URLROOT ?>/dashboard" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Customers' ? "ml-5 active" : '' ?> ">
             <i class="fa-solid fa-users"></i>
             <h4 class="w-100 fw-4">Customers</h4>
         </a>
         
-        <a href="<?php echo URLROOT ?>/photos" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Photos' ? "active" : '' ?> ">
+        <a href="<?php echo URLROOT ?>/photos" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Photos' ? "ml-5 active" : '' ?> ">
             <i class="fa-solid fa-images"></i>
             <h4 class="w-100 fw-4">Gallery</h4>
         </a>
-        <a href="<?php echo URLROOT ?>/photos" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Contact' ? "active" : '' ?> ">
+        <a href="<?php echo URLROOT ?>/messages" class="d-flex align-center p-5 list-hover gap-4 <?php echo $data['page'] === 'Contact' ? "ml-5 active" : '' ?> ">
             <i class="fa-solid fa-message"></i>
             <h4 class="w-100 fw-4">Contact</h4>
         </a>

@@ -4,7 +4,7 @@
     // Global named constant for DB
     define('DB_HOST', 'localhost');
     define('DB_USERNAME', 'root');
-    define('DB_PASSWORD', '');
+    define('DB_PASSWORD', 'root');
     define('DB_NAME', 'pooljunction');
 
     // App Root
@@ -13,10 +13,10 @@
     define('APPROOT', $appDirectory);
 
     // PORT, OPTIONAL
-    $port = "";
+    $port = "8080";
 
     // URL Root
-    $urlRoot = "http://localhost".$port."/PoolJunction";
+    $urlRoot = "http://localhost".(!empty($port) ? ":".$port : "")."/PoolJunction";
     define("URLROOT",  $urlRoot);
 
     // Site Name

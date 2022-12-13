@@ -40,4 +40,33 @@
             return $this->db->rowCount();
         }
 
+        // Get all contacts
+        public function getAllContacts() {
+            $this->db->query('SELECT * FROM contact ORDER BY completed ASC, created_at DESC');
+            $this->db->execute();
+            return $this->db->resultSet();
+        }
+
+        // set completed to true
+        public function completed($id) {
+            $this->db->query('UPDATE contact SET completed = 1 WHERE id = :id');
+            $this->db->bind(':id', $id);
+            if($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        // set completed to false
+        public function uncompleted($id) {
+            $this->db->query('UPDATE contact SET completed = 0 WHERE id = :id');
+            $this->db->bind(':id', $id);
+            if($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
     }

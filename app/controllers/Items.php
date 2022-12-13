@@ -19,7 +19,7 @@
             $data = [
                 "Admin_Page" => true,
                 "page" => "Products",
-                "products" => $this->productsModel->getProductsByUpdated(),
+                "products" => $this->productsModel->getProductsById(),
                 "categories" => $this->categoryModel->getCategories(),
                 "name" => '',
                 "description" => '',
@@ -68,7 +68,7 @@
             $data = [
                 "Admin_Page" => true,
                 "page" => "Products",
-                "products" => $this->productsModel->getProductsByUpdated(),
+                "products" => $this->productsModel->getProductsById(),
                 "categories" => $this->categoryModel->getCategories(),
                 "name" => trim($_POST['name']),
                 "description" => trim($_POST['description']),
@@ -134,8 +134,6 @@
          public function update($id = null) {
 
             $product = $this->productsModel->getProductById($id);
-            print_r(empty($product));
-            die();
             // Check for POST
             if($_SERVER['REQUEST_METHOD'] != 'POST' || $id === null) {
                 redirect('items');
@@ -148,7 +146,7 @@
             $data = [
                 "Admin_Page" => true,
                 "page" => "Products",
-                "products" => $this->productsModel->getProductsByUpdated(),
+                "products" => $this->productsModel->getProductsById(),
                 "categories" => $this->categoryModel->getCategories(),
                 "name" => trim($_POST['name']),
                 "description" => trim($_POST['description']),
